@@ -47,4 +47,11 @@ public class LicenseOne {
         this.ipMac=SystemInfo.getMAC();
         this.timestamp=Long.toString(timestamp.getTime());
     }
+
+    public boolean compare (LicenseTwo licenseTwo)
+    {
+        if(this.getHostName().equals(licenseTwo.getHostName())&&this.getIpAddress().equals(licenseTwo.getIpAddress())&&this.getIpMac().equals(licenseTwo.getIpMac()))
+            return true;
+        else return false;
+    }
 }

@@ -16,8 +16,12 @@ public class DesktopWebApplication extends JFrame {
     private JTextField licenseInput = new JTextField("", 5);
     private JButton validateBtn = new JButton("Validate");
 
+    public LicenseOne licenseOne= new LicenseOne();
+    public LicenseTwo licenseTwo = new LicenseTwo();
+
 
     public DesktopWebApplication() {
+
         super("Application");
         this.setPreferredSize(new Dimension(500, 300));
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -58,7 +62,6 @@ public class DesktopWebApplication extends JFrame {
 
     class GenerateBtnEventListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            LicenseOne licenseOne= new LicenseOne();
             licenseOne.initization();
             json1Fld.setText(new Gson().toJson(licenseOne));
         }
@@ -66,8 +69,11 @@ public class DesktopWebApplication extends JFrame {
 
     class validateBtnEventListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            String message = "License accepted";
-            JOptionPane.showMessageDialog(null, message, "Output", JOptionPane.PLAIN_MESSAGE);
+            String message="";
+            licenseTwo.initialize(licenseInput.getText());
+            if(licenseOne.compare(licenseTwo))
+                message = "License accepted";
+                JOptionPane.showMessageDialog(null, message, "Output", JOptionPane.PLAIN_MESSAGE);
         }
     }
 
