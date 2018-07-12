@@ -11,17 +11,73 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DesktopWebApplication.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/fortech/DesktopWebApplication.java">
+      <file leaf-file-name="SystemInfo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/fortech/SystemInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="32" selection-end-column="29" />
+            <state relative-caret-position="72">
+              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="LicenseOne.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/fortech/LicenseOne.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="628">
+              <caret line="47" column="58" lean-forward="false" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="58" />
+              <folding>
+                <element signature="e#225#226#0" expanded="true" />
+                <element signature="e#257#258#0" expanded="true" />
+                <element signature="e#292#293#0" expanded="true" />
+                <element signature="e#323#324#0" expanded="true" />
+                <element signature="e#359#360#0" expanded="true" />
+                <element signature="e#391#392#0" expanded="true" />
+                <element signature="e#423#424#0" expanded="true" />
+                <element signature="e#451#452#0" expanded="true" />
+                <element signature="e#501#502#0" expanded="true" />
+                <element signature="e#543#544#0" expanded="true" />
+                <element signature="e#590#591#0" expanded="true" />
+                <element signature="e#629#630#0" expanded="true" />
+                <element signature="e#679#680#0" expanded="true" />
+                <element signature="e#721#722#0" expanded="true" />
+                <element signature="e#763#764#0" expanded="true" />
+                <element signature="e#797#798#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/fortech/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DesktopWebApplication.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/fortech/DesktopWebApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="862">
+              <caret line="62" column="58" lean-forward="true" selection-start-line="62" selection-start-column="58" selection-end-line="62" selection-end-column="58" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -35,6 +91,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/src/com/fortech/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/fortech/DesktopWebApplication.java" />
+        <option value="$PROJECT_DIR$/src/com/fortech/LicenseOne.java" />
       </list>
     </option>
   </component>
@@ -45,10 +104,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="992" />
+    <option name="x" value="89" />
     <option name="y" value="24" />
-    <option name="width" value="928" />
-    <option name="height" value="1028" />
+    <option name="width" value="1514" />
+    <option name="height" value="975" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -66,6 +125,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
@@ -91,17 +151,21 @@
         </subPane>
       </pane>
       <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/gson-2.8.4.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.097751714" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/charsets.jar" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -234,7 +298,8 @@
       <updated>1531321148624</updated>
       <workItem from="1531321150037" duration="195000" />
       <workItem from="1531321358668" duration="1115000" />
-      <workItem from="1531378996800" duration="192000" />
+      <workItem from="1531378996800" duration="784000" />
+      <workItem from="1531381029284" duration="9666000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;rebuild the desktop app&quot;">
       <created>1531321813055</created>
@@ -247,7 +312,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1502000" />
+    <option name="totallyTimeSpent" value="11760000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
@@ -255,14 +320,14 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3392857" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3384458" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30163598" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13599183" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34924078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -309,9 +374,21 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/fortech/DesktopWebApplication.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fortech/DesktopWebApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="936">
           <caret line="55" column="1" lean-forward="false" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -335,44 +412,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1531379143709" expanded="true" signature="31497:31539" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="31497:31557" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="31497:31570" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="31497:31585" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="31620:33774" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="31633:33759" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="31687:31982" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="31706:31967" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="31769:31947" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="31809:31913" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="31830:31891" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="32032:32359" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="32051:32344" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="32146:32324" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="32186:32290" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="32207:32268" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="32410:32675" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="32429:32660" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="32462:32640" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="32502:32606" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="32523:32584" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="32718:33024" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="32737:33009" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="32811:32989" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="32851:32955" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="32872:32933" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="33075:33428" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="33094:33413" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="33176:33393" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="33216:33359" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="33237:33337" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="33480:33745" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="33499:33730" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="33532:33710" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="33572:33676" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="33593:33654" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -388,7 +428,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="13" column="4" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -408,14 +450,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fortech/SystemInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -436,51 +470,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1531379143709" expanded="true" signature="31497:31539" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="31497:31557" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="31497:31570" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="31497:31585" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="31620:33774" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="31633:33759" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="31687:31982" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="31706:31967" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="31769:31947" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="31809:31913" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="31830:31891" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="32032:32359" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="32051:32344" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="32146:32324" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="32186:32290" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="32207:32268" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="32410:32675" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="32429:32660" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="32462:32640" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="32502:32606" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="32523:32584" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="32718:33024" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="32737:33009" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="32811:32989" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="32851:32955" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="32872:32933" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="33075:33428" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="33094:33413" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="33176:33393" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="33216:33359" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="33237:33337" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="33480:33745" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="33499:33730" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="33532:33710" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="33572:33676" ph="..." />
-            <marker date="1531379143709" expanded="true" signature="33593:33654" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/fortech/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -495,16 +484,67 @@
     <entry file="file://$PROJECT_DIR$/desktop-app.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+          <caret line="10" column="9" lean-forward="false" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Downloads/gson-2.8.4.jar!/com/google/gson/Gson.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-324">
+          <caret line="47" column="19" lean-forward="false" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fortech/SystemInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fortech/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/fortech/LicenseOne.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="628">
+          <caret line="47" column="58" lean-forward="false" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="58" />
+          <folding>
+            <element signature="e#225#226#0" expanded="true" />
+            <element signature="e#257#258#0" expanded="true" />
+            <element signature="e#292#293#0" expanded="true" />
+            <element signature="e#323#324#0" expanded="true" />
+            <element signature="e#359#360#0" expanded="true" />
+            <element signature="e#391#392#0" expanded="true" />
+            <element signature="e#423#424#0" expanded="true" />
+            <element signature="e#451#452#0" expanded="true" />
+            <element signature="e#501#502#0" expanded="true" />
+            <element signature="e#543#544#0" expanded="true" />
+            <element signature="e#590#591#0" expanded="true" />
+            <element signature="e#629#630#0" expanded="true" />
+            <element signature="e#679#680#0" expanded="true" />
+            <element signature="e#721#722#0" expanded="true" />
+            <element signature="e#763#764#0" expanded="true" />
+            <element signature="e#797#798#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/fortech/DesktopWebApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="32" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="862">
+          <caret line="62" column="58" lean-forward="true" selection-start-line="62" selection-start-column="58" selection-end-line="62" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -565,7 +605,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
