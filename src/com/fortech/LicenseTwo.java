@@ -9,8 +9,8 @@ public class LicenseTwo {
     private String ipAddress;
     private String ipMac;
     private String timestamp;
-    private Date start_date;
-    private Date finish_date;
+    private String start_date;
+    private String finish_date;
     private String client;
 
     public String getHostName() {
@@ -29,11 +29,11 @@ public class LicenseTwo {
         return timestamp;
     }
 
-    public Date getStart_date() {
+    public String getStart_date() {
         return start_date;
     }
 
-    public Date getFinish_date() {
+    public String  getFinish_date() {
         return finish_date;
     }
 
@@ -57,11 +57,11 @@ public class LicenseTwo {
         this.timestamp = timestamp;
     }
 
-    public void setStart_date(Date start_date) {
+    public void setStart_date(String start_date) {
         this.start_date = start_date;
     }
 
-    public void setFinish_date(Date finish_date) {
+    public void setFinish_date(String finish_date) {
         this.finish_date = finish_date;
     }
 

@@ -63,7 +63,15 @@ public class DesktopWebApplication extends JFrame {
     class GenerateBtnEventListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             licenseOne.initization();
-            json1Fld.setText(new Gson().toJson(licenseOne));
+            Cipher cipher = new Cipher();
+            String jsonSimple = new Gson().toJson(licenseOne);
+            String jsonEncoded = cipher.encrypt(jsonSimple);
+            System.out.println(jsonEncoded);
+            json1Fld.setText(new Gson().toJson(jsonEncoded));
+            System.out.println(new Gson().toJson(licenseOne));
+
+            String jsonDecoded = cipher.decrypt(jsonEncoded);
+            System.out.println(jsonDecoded);
         }
     }
 
