@@ -3,7 +3,7 @@ package com.fortech;
 import java.util.Date;
 import com.google.gson.Gson;
 
-public class LicenseTwo {
+public class ValidationKey {
 
     private String hostName;
     private String ipAddress;
@@ -33,7 +33,7 @@ public class LicenseTwo {
         return start_date;
     }
 
-    public String  getFinish_date() {
+    public String getFinish_date() {
         return finish_date;
     }
 
@@ -68,12 +68,5 @@ public class LicenseTwo {
     public void setClient(String client) {
         this.client = client;
     }
-
-    public LicenseTwo initialize(String json2){
-        Gson gson = new Gson();
-        LicenseTwo generated = gson.fromJson(json2, LicenseTwo.class);
-        return generated;
-    }
-
 
 }

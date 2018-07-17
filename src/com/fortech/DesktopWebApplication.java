@@ -1,11 +1,17 @@
 package com.fortech;
 
 import com.google.gson.Gson;
-import jdk.nashorn.internal.parser.JSONParser;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
+import jdk.nashorn.internal.objects.NativeJSON;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import javax.swing.*;
 
 
@@ -16,8 +22,8 @@ public class DesktopWebApplication extends JFrame {
     private JTextField licenseInput = new JTextField("", 5);
     private JButton validateBtn = new JButton("Validate");
 
-    public LicenseOne licenseOne= new LicenseOne();
-    public LicenseTwo licenseTwo = new LicenseTwo();
+    public GeneratedKey generatedKey = new GeneratedKey();
+    public ValidationKey validationKey = new ValidationKey();
 
 
     public DesktopWebApplication() {
@@ -48,13 +54,14 @@ public class DesktopWebApplication extends JFrame {
         container.add(putLbl);
 
         //licenseInput
+
         container.add(licenseInput);
 
         //validateBtn
         validateBtn.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.pack();
         container.add(validateBtn);
-        validateBtn.addActionListener(new validateBtnEventListener());
+        validateBtn.addActionListener(new ValidateBtnEventListener());
         this.pack();
 
     }
@@ -62,25 +69,47 @@ public class DesktopWebApplication extends JFrame {
 
     class GenerateBtnEventListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            licenseOne.initization();
-            Cipher cipher = new Cipher();
-            String jsonSimple = new Gson().toJson(licenseOne);
-            String jsonEncoded = cipher.encrypt(jsonSimple);
-            System.out.println(jsonEncoded);
-            json1Fld.setText(new Gson().toJson(jsonEncoded));
-            System.out.println(new Gson().toJson(licenseOne));
 
-            String jsonDecoded = cipher.decrypt(jsonEncoded);
-            System.out.println(jsonDecoded);
+            generatedKey.initization();
+            JsonParser parser = new JsonParser();
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+            JsonElement el = parser.parse((new Gson().toJson(generatedKey)).toString());
+            json1Fld.setText(gson.toJson(el));
         }
     }
 
-    class validateBtnEventListener implements ActionListener {
+    class ValidateBtnEventListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             String message="";
-            licenseTwo.initialize(licenseInput.getText());
-            if(licenseOne.compare(licenseTwo))
-                message = "License accepted";
+
+            Gson gson = new Gson();
+            validationKey = gson.fromJson(licenseInput.getText(), ValidationKey.class);
+
+
+            if(generatedKey.compare(validationKey))
+            {
+
+                String start_date_string = validationKey.getStart_date();
+                String finish_date_string = validationKey.getFinish_date();
+                SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+                Calendar cal = Calendar.getInstance();
+                Date today = cal.getTime();
+
+                try {
+                    Date start_date = sdf.parse(start_date_string);
+                    Date finish_date = sdf.parse(finish_date_string);
+                    if(today.after(start_date)&&today.before(finish_date))
+                        message="License accepted!";
+                    else message="License expired!";
+
+                } catch (ParseException e1) {
+                    e1.printStackTrace();
+                }
+            }
+            else
+                message="License not accepted!";
+
                 JOptionPane.showMessageDialog(null, message, "Output", JOptionPane.PLAIN_MESSAGE);
         }
     }

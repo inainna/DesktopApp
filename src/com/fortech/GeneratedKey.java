@@ -2,7 +2,7 @@ package com.fortech;
 
 import java.sql.Timestamp;
 
-public class LicenseOne {
+public class GeneratedKey {
     private String hostName;
     private String ipAddress;
     private String ipMac;
@@ -48,9 +48,9 @@ public class LicenseOne {
         this.timestamp=Long.toString(timestamp.getTime());
     }
 
-    public boolean compare (LicenseTwo licenseTwo)
+    public boolean compare (ValidationKey validationKey)
     {
-        if(this.getHostName().equals(licenseTwo.getHostName())&&this.getIpAddress().equals(licenseTwo.getIpAddress())&&this.getIpMac().equals(licenseTwo.getIpMac()))
+        if(this.getHostName().equals(validationKey.getHostName())&&this.getIpAddress().equals(validationKey.getIpAddress())&&this.getIpMac().equals(validationKey.getIpMac()))
             return true;
         else return false;
     }
