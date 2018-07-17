@@ -24,6 +24,7 @@ public class DesktopWebApplication extends JFrame {
 
     public GeneratedKey generatedKey = new GeneratedKey();
     public ValidationKey validationKey = new ValidationKey();
+    public Cipher cipher = new Cipher();
 
 
     public DesktopWebApplication() {
@@ -70,12 +71,13 @@ public class DesktopWebApplication extends JFrame {
     class GenerateBtnEventListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
 
+            licenseInput.setText("");
+
             generatedKey.initization();
             JsonParser parser = new JsonParser();
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
-
             JsonElement el = parser.parse((new Gson().toJson(generatedKey)).toString());
-            json1Fld.setText(gson.toJson(el));
+            json1Fld.setText(cipher.encrypt(gson.toJson(el)));
         }
     }
 
@@ -84,7 +86,7 @@ public class DesktopWebApplication extends JFrame {
             String message="";
 
             Gson gson = new Gson();
-            validationKey = gson.fromJson(licenseInput.getText(), ValidationKey.class);
+            validationKey = gson.fromJson(cipher.decrypt(licenseInput.getText()), ValidationKey.class);
 
 
             if(generatedKey.compare(validationKey))
