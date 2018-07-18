@@ -1,5 +1,6 @@
 package com.fortech;
 
+import java.io.IOException;
 import java.sql.Timestamp;
 
 public class GeneratedKey {
@@ -44,7 +45,12 @@ public class GeneratedKey {
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         this.hostName=SystemInfo.getSystemName();
         this.ipAddress=SystemInfo.getIPAddress();
-        this.ipMac=SystemInfo.getMAC();
+        try {
+            this.ipMac = SystemInfo.getMAC();
+        }catch(IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println(this.getIpMac());
         this.timestamp=Long.toString(timestamp.getTime());
     }
 
