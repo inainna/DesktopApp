@@ -6,7 +6,9 @@ public class Cipher {
     private static final String KEY = "some-secret-key-of-your-choice";
 
     public String encrypt(final String text) {
-        return Base64.encodeBase64String(this.xor(text.getBytes()));
+        return Base64.encodeBase64URLSafeString(this.xor(text.getBytes()));
+
+
     }
 
     public String decrypt(final String hash) {
