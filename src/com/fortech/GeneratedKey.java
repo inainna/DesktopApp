@@ -55,6 +55,8 @@ public class GeneratedKey {
 
     public boolean compare (ValidationKey validationKey)
     {
+        if(this.hostName==null || this.ipAddress==null || this.ipMac==null || this.timestamp==null)
+            return false;
         if(this.getHostName().equals(validationKey.getHostName())&&this.getIpAddress().equals(validationKey.getIpAddress())&&this.getIpMac().equals(validationKey.getIpMac()))
             return true;
         else return false;
