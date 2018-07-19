@@ -4,10 +4,11 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
-import jdk.nashorn.internal.objects.NativeJSON;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -103,8 +104,13 @@ public class DesktopWebApplication extends JFrame {
                 try {
                     Date start_date = sdf.parse(start_date_string);
                     Date finish_date = sdf.parse(finish_date_string);
-                    if(today.after(start_date)&&today.before(finish_date))
-                        message="License accepted!";
+                    if(today.after(start_date)&&today.before(finish_date)) {
+                        message = "License accepted!";
+                        String homeDir = System.getProperty("user.dir");
+                        Path newFilePath = Paths.get(homeDir+"/license.txt");
+                        LicenseFileUtilities licenseFileUtilities = new LicenseFileUtilities();
+                        licenseFileUtilities.createFile(newFilePath, licenseInput.getText());
+                    }
                     else message="License expired!";
 
                 } catch (ParseException e1) {
