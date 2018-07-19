@@ -4,11 +4,8 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
-<<<<<<< HEAD
-=======
 import jdk.nashorn.internal.objects.NativeJSON;
 import org.json.*;
->>>>>>> 914082f5d75930560665f18cc87de5a73fe35fa4
 
 import java.awt.*;
 import java.awt.event.*;
@@ -89,6 +86,7 @@ public class DesktopWebApplication extends JFrame {
     }
 
 
+
     class GenerateBtnEventListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
 
@@ -118,7 +116,8 @@ public class DesktopWebApplication extends JFrame {
 
             if(isJSONValid(key)) {
 
-                if (generatedKey.compare(validationKey)) {
+                if(generatedKey.compare(validationKey))
+                {
 
                     String start_date_string = validationKey.getStart_date();
                     String finish_date_string = validationKey.getFinish_date();
@@ -126,35 +125,26 @@ public class DesktopWebApplication extends JFrame {
                     Calendar cal = Calendar.getInstance();
                     Date today = cal.getTime();
 
-<<<<<<< HEAD
-                try {
-                    Date start_date = sdf.parse(start_date_string);
-                    Date finish_date = sdf.parse(finish_date_string);
-                    if(today.after(start_date)&&today.before(finish_date)) {
-                        message = "License accepted!";
-                        String homeDir = System.getProperty("user.dir");
-                        Path newFilePath = Paths.get(homeDir+"/license.txt");
-                        LicenseFileUtilities licenseFileUtilities = new LicenseFileUtilities();
-                        licenseFileUtilities.createFile(newFilePath, licenseInput.getText());
-                    }
-                    else message="License expired!";
-=======
                     try {
                         Date start_date = sdf.parse(start_date_string);
                         Date finish_date = sdf.parse(finish_date_string);
-                        if (today.after(start_date) && today.before(finish_date))
+                        if(today.after(start_date)&&today.before(finish_date)) {
                             message = "License accepted!";
-                        else message = "License expired!";
->>>>>>> 914082f5d75930560665f18cc87de5a73fe35fa4
+                            String homeDir = System.getProperty("user.dir");
+                            Path newFilePath = Paths.get(homeDir+"/license.txt");
+                            LicenseFileUtilities licenseFileUtilities = new LicenseFileUtilities();
+                            licenseFileUtilities.createFile(newFilePath, licenseInput.getText());
+                        }
+                        else message="License expired!";
 
                     } catch (ParseException e1) {
                         e1.printStackTrace();
                     }
                 } else
                     message = "License not accepted!";
-            }
-            else
-                message="License is incorrect";
+                }
+
+            else message="License is incorrect";
 
                 JOptionPane.showMessageDialog(null, message, "Output", JOptionPane.PLAIN_MESSAGE);
         }
