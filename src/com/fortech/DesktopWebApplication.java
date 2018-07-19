@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import jdk.nashorn.internal.objects.NativeJSON;
+import org.json.*;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -66,6 +67,21 @@ public class DesktopWebApplication extends JFrame {
         this.pack();
 
     }
+    
+    public static boolean isJSONValid(String test) {
+        try {
+            new JSONObject(test);
+        } catch (JSONException ex) {
+            // edited, to include @Arthur's comment
+            // e.g. in case JSONArray is valid as well...
+            try {
+                new JSONArray(test);
+            } catch (JSONException ex1) {
+                return false;
+            }
+        }
+        return true;
+    }
 
 
     class GenerateBtnEventListener implements ActionListener {
@@ -87,30 +103,37 @@ public class DesktopWebApplication extends JFrame {
 
             Gson gson = new Gson();
             validationKey = gson.fromJson(cipher.decrypt(licenseInput.getText()), ValidationKey.class);
+            System.out.println(validationKey);
 
+            String key = cipher.decrypt(licenseInput.getText());
 
-            if(generatedKey.compare(validationKey))
-            {
+            System.out.println(key);
 
-                String start_date_string = validationKey.getStart_date();
-                String finish_date_string = validationKey.getFinish_date();
-                SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-                Calendar cal = Calendar.getInstance();
-                Date today = cal.getTime();
+            if(isJSONValid(key)) {
 
-                try {
-                    Date start_date = sdf.parse(start_date_string);
-                    Date finish_date = sdf.parse(finish_date_string);
-                    if(today.after(start_date)&&today.before(finish_date))
-                        message="License accepted!";
-                    else message="License expired!";
+                if (generatedKey.compare(validationKey)) {
 
-                } catch (ParseException e1) {
-                    e1.printStackTrace();
-                }
+                    String start_date_string = validationKey.getStart_date();
+                    String finish_date_string = validationKey.getFinish_date();
+                    SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+                    Calendar cal = Calendar.getInstance();
+                    Date today = cal.getTime();
+
+                    try {
+                        Date start_date = sdf.parse(start_date_string);
+                        Date finish_date = sdf.parse(finish_date_string);
+                        if (today.after(start_date) && today.before(finish_date))
+                            message = "License accepted!";
+                        else message = "License expired!";
+
+                    } catch (ParseException e1) {
+                        e1.printStackTrace();
+                    }
+                } else
+                    message = "License not accepted!";
             }
             else
-                message="License not accepted!";
+                message="License is incorrect";
 
                 JOptionPane.showMessageDialog(null, message, "Output", JOptionPane.PLAIN_MESSAGE);
         }
