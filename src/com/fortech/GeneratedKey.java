@@ -50,7 +50,6 @@ public class GeneratedKey {
         }catch(IOException e) {
             e.printStackTrace();
         }
-        System.out.println(this.getIpMac());
         this.timestamp=Long.toString(timestamp.getTime());
     }
 

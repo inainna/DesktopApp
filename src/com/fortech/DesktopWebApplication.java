@@ -74,9 +74,11 @@ public class DesktopWebApplication extends JFrame {
             licenseInput.setText("");
 
             generatedKey.initization();
+
             JsonParser parser = new JsonParser();
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             JsonElement el = parser.parse((new Gson().toJson(generatedKey)).toString());
+            System.out.println(gson.toJson(el).toString());
             json1Fld.setText(cipher.encrypt(gson.toJson(el)));
         }
     }
