@@ -1,6 +1,10 @@
 package com.fortech;
 
+import java.lang.reflect.Field;
 import java.util.Date;
+import java.util.Objects;
+import java.util.stream.Stream;
+
 import com.google.gson.Gson;
 
 public class ValidationKey {
@@ -67,6 +71,17 @@ public class ValidationKey {
 
     public void setClient(String client) {
         this.client = client;
+    }
+
+    public boolean checkNullFields() throws IllegalAccessException {
+        boolean result = false;
+        for (Field f : getClass().getDeclaredFields())
+            if (f.get(this) == null)
+            {
+                result =  true;
+                break;
+            }
+            return result;
     }
 
 }

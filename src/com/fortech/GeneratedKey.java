@@ -57,7 +57,7 @@ public class GeneratedKey {
     {
         if(this.hostName==null || this.ipAddress==null || this.ipMac==null || this.timestamp==null)
             return false;
-        if(this.getHostName().equals(validationKey.getHostName())&&this.getIpAddress().equals(validationKey.getIpAddress())&&this.getIpMac().equals(validationKey.getIpMac()))
+        if(this.getHostName().equals(validationKey.getHostName())&&this.getIpAddress().equals(validationKey.getIpAddress())&&this.getIpMac().equals(validationKey.getIpMac())&&this.getTimestamp().equals(validationKey.getTimestamp()))
             return true;
         else return false;
     }

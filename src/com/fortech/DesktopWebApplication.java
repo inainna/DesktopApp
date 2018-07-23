@@ -1,14 +1,15 @@
 package com.fortech;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
+import com.google.gson.*;
 import jdk.nashorn.internal.objects.NativeJSON;
 import org.json.*;
 
 import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.DataFlavor;
 import java.awt.event.*;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.ParseException;
@@ -22,7 +23,8 @@ public class DesktopWebApplication extends JFrame {
     private JButton generateBtn = new JButton("Generate");
     private JTextArea json1Fld = new JTextArea("");
     private JLabel putLbl = new JLabel("Put your validation code here:");
-    private JTextField licenseInput = new JTextField("", 5);
+    private JButton pasteValidationKey = new JButton("Paste");
+    private JTextArea licenseInput = new JTextArea();
     private JButton validateBtn = new JButton("Validate");
 
     public GeneratedKey generatedKey = new GeneratedKey();
@@ -40,6 +42,8 @@ public class DesktopWebApplication extends JFrame {
 
         Container container = this.getContentPane();
         container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
+        Color containerColor = Color.decode("#5B9092");
+        container.setBackground(containerColor);
 
         //generateBtn
         generateBtn.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -50,6 +54,8 @@ public class DesktopWebApplication extends JFrame {
         //json1Fld
         json1Fld.setEditable(true);
         json1Fld.setLineWrap(true);
+        Color fieldColor = Color.decode("#d0e1e2");
+        json1Fld.setBackground(fieldColor);
         container.add(json1Fld);
 
         //putLbl
@@ -57,8 +63,16 @@ public class DesktopWebApplication extends JFrame {
         this.pack();
         container.add(putLbl);
 
-        //licenseInput
+        //pasteValidationKey
+        pasteValidationKey.setAlignmentX(Component.CENTER_ALIGNMENT);
+        this.pack();
+        container.add(pasteValidationKey);
+        pasteValidationKey.addActionListener(new PasteValidationKeyEventListener());
 
+        //licenseInput
+        licenseInput.setBackground(fieldColor);
+        licenseInput.setEditable(true);
+        licenseInput.setLineWrap(true);
         container.add(licenseInput);
 
         //validateBtn
@@ -69,13 +83,11 @@ public class DesktopWebApplication extends JFrame {
         this.pack();
 
     }
-    
+
     public static boolean isJSONValid(String test) {
         try {
             new JSONObject(test);
         } catch (JSONException ex) {
-            // edited, to include @Arthur's comment
-            // e.g. in case JSONArray is valid as well...
             try {
                 new JSONArray(test);
             } catch (JSONException ex1) {
@@ -84,7 +96,6 @@ public class DesktopWebApplication extends JFrame {
         }
         return true;
     }
-
 
 
     class GenerateBtnEventListener implements ActionListener {
@@ -102,52 +113,74 @@ public class DesktopWebApplication extends JFrame {
         }
     }
 
-    class ValidateBtnEventListener implements ActionListener {
+    class PasteValidationKeyEventListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            String message="";
+            String dataFromClipboard = "";
+            try {
+                dataFromClipboard = (String) Toolkit.getDefaultToolkit()
+                        .getSystemClipboard().getData(DataFlavor.stringFlavor);
+                System.out.println(dataFromClipboard);
+            } catch (Exception e1) {
+                e1.printStackTrace();
+            }
 
-            Gson gson = new Gson();
-            validationKey = gson.fromJson(cipher.decrypt(licenseInput.getText()), ValidationKey.class);
-            System.out.println(validationKey);
-
-            String key = cipher.decrypt(licenseInput.getText());
-
-            System.out.println(key);
-
-            if(isJSONValid(key)) {
-
-                if(generatedKey.compare(validationKey))
-                {
-
-                    String start_date_string = validationKey.getStart_date();
-                    String finish_date_string = validationKey.getFinish_date();
-                    SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-                    Calendar cal = Calendar.getInstance();
-                    Date today = cal.getTime();
-
-                    try {
-                        Date start_date = sdf.parse(start_date_string);
-                        Date finish_date = sdf.parse(finish_date_string);
-                        if(today.after(start_date)&&today.before(finish_date)) {
-                            message = "License accepted!";
-                            String homeDir = System.getProperty("user.dir");
-                            Path newFilePath = Paths.get(homeDir+"/license.txt");
-                            LicenseFileUtilities licenseFileUtilities = new LicenseFileUtilities();
-                            licenseFileUtilities.createFile(newFilePath, licenseInput.getText());
-                        }
-                        else message="License expired!";
-
-                    } catch (ParseException e1) {
-                        e1.printStackTrace();
-                    }
-                } else
-                    message = "License not accepted!";
-                }
-
-            else message="License is incorrect";
-
-                JOptionPane.showMessageDialog(null, message, "Output", JOptionPane.PLAIN_MESSAGE);
+            if (dataFromClipboard != "") {
+                licenseInput.setText(dataFromClipboard);
+            } else JOptionPane.showMessageDialog(null, "Clipboard is empty", "Output", JOptionPane.PLAIN_MESSAGE);
         }
+
     }
 
+    class ValidateBtnEventListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            String message = "";
+            boolean nullFields = true;
+
+            if (!licenseInput.getText().equals("")) {
+                Gson gson = new Gson();
+                String encryptedValidationKey = licenseInput.getText();
+                String decryptedJsonValidationKey = cipher.decrypt(encryptedValidationKey);
+
+                try {
+                    validationKey = gson.fromJson(decryptedJsonValidationKey, ValidationKey.class);
+                    nullFields = validationKey.checkNullFields();
+                } catch (Exception ex) {
+                }
+                String key = cipher.decrypt(licenseInput.getText());
+                if (isJSONValid(key) && nullFields == false) {
+
+                    if (generatedKey.compare(validationKey)) {
+
+                        String start_date_string = validationKey.getStart_date();
+                        String finish_date_string = validationKey.getFinish_date();
+                        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+                        Calendar cal = Calendar.getInstance();
+                        Date today = cal.getTime();
+
+                        try {
+                            Date start_date = sdf.parse(start_date_string);
+                            Date finish_date = sdf.parse(finish_date_string);
+                            if (today.after(start_date) && today.before(finish_date)) {
+                                message = "License accepted!";
+                                String homeDir = System.getProperty("user.dir");
+
+                                Path newFilePath = Paths.get(homeDir + "/license.txt");
+                                try {
+                                    Files.deleteIfExists(newFilePath);
+                                } catch (IOException e1) {
+                                    e1.printStackTrace();
+                                }
+                                LicenseFileUtilities licenseFileUtilities = new LicenseFileUtilities();
+                                licenseFileUtilities.createFile(newFilePath, licenseInput.getText());
+                            } else message = "License expired!";
+                        } catch (ParseException e1) {
+                            e1.printStackTrace();
+                        }
+                    } else
+                        message = "License not accepted!";
+                } else message = "License is incorrect";
+            } else message = "Empty field";
+            JOptionPane.showMessageDialog(null, message, "Output", JOptionPane.PLAIN_MESSAGE);
+        }
+    }
 }
