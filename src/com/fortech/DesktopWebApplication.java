@@ -1,11 +1,9 @@
 package com.fortech;
 
 import com.google.gson.*;
-import jdk.nashorn.internal.objects.NativeJSON;
 import org.json.*;
 
 import java.awt.*;
-import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.event.*;
 import java.io.IOException;
